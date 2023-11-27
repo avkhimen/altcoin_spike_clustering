@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  altcoin_spike_clustering:
+    container_name: altcoin_spike_clustering
+    build: 
+      context: ./docker
+      dockerfile: Dockerfile
+    ports:
+      - '5010:5010'
+    volumes:
+      - ./app:/home/jovyan/app
+    command: tail -F anything
