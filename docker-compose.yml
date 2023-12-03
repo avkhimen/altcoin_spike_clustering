@@ -10,4 +10,4 @@ services:
       - '5010:5010'
     volumes:
       - ./app:/home/jovyan/app
-    command: tail -F anything
+    #command: tail -F anything
