@@ -11,3 +11,5 @@ services:
     volumes:
       - ./app:/home/jovyan/app
     #command: tail -F anything
+    environment:
+      - use_trained_model=False
