@@ -5,7 +5,7 @@ import os
 path = os.getcwd() + "/data"
   
 # Getting the list of directories 
-dir = os.listdir(path) 
+dir = os.listdir(path)
   
 # Checking if the list is empty or not 
 if len(dir) == 0: 

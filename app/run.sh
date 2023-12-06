@@ -2,19 +2,22 @@ python3 get_data.py
 unzip -o *.zip -d data/
 rm *.zip
 cd data/
-sudo rm *_1.csv
-sudo rm *_1440.csv
-sudo rm *_15.csv
-sudo rm *_720.csv
-sudo rm *_5.csv
-sudo rm *USD*
-sudo rm *CAD*
-sudo rm *AUD*
-sudo rm *EUR*
-sudo rm *JPY*
-sudo rm *GBP*
-sudo rm *CHF*
-sudo rm *AED*
-sudo rm *ETH_60.csv
-sudo rm *DAI_60.csv
-sudo rm *DOT_60.csv
+rm *_1.csv
+rm *_1440.csv
+rm *_15.csv
+rm *_720.csv
+rm *_5.csv
+rm *USD*
+rm *CAD*
+rm *AUD*
+rm *EUR*
+rm *JPY*
+rm *GBP*
+rm *CHF*
+rm *AED*
+rm *ETH_60.csv
+rm *DAI_60.csv
+rm *DOT_60.csv
+cd ..
+sleep 100000
+python3 cluster_altcoins.py
