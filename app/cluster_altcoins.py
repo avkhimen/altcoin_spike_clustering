@@ -7,15 +7,22 @@ from datetime import datetime
 directory = os.getcwd() + '/data'
 
 filenames = []
+timestamps = []
 for filename in os.listdir(directory):
     f = os.path.join(directory, filename)
     df = pd.read_csv(f, header=None)
-    timestamps = datetime.utcfromtimestamp(df[0][0]).strftime('%Y-%m-%d %H:%M:%S')
+    timestamps.append(datetime.utcfromtimestamp(df[0][0]).strftime('%Y-%m-%d %H:%M:%S'))
     filenames.append(filename[:-7])
 
 df = pd.DataFrame({'coin' : filenames, 'start' : timestamps})
 
-print(df)
+df['start'] = pd.to_datetime(df['start'])
+
+df = df.sort_values(by=['start']).reset_index()
+
+print(df.head(40))
+
+print(df.tail(40))
 
 df = pd.DataFrame({1 : [1,2,3], 2: [1,2,3], 3 : [1,2,3], 4 : [1,2,3]})
 
