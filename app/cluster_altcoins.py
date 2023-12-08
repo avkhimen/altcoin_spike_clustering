@@ -20,16 +20,23 @@ df['start'] = pd.to_datetime(df['start'])
 
 df = df.sort_values(by=['start']).reset_index()
 
-print(df.head(40))
+df = df[df['start'] < '2021-12-12']
+
+#print(df.head(40))
 
 print(df.tail(40))
 
-df = pd.DataFrame({1 : [1,2,3], 2: [1,2,3], 3 : [1,2,3], 4 : [1,2,3]})
+ts_start = df['start'].iloc[-1]
 
-X = np.array(df.values.tolist())
+print(ts_start)
+print(type(ts_start))
 
-print(X)
+# df = pd.DataFrame({1 : [1,2,3], 2: [1,2,3], 3 : [1,2,3], 4 : [1,2,3]})
 
-clustering = SpectralClustering(n_clusters=3, assign_labels='discretize', random_state=0).fit(X)
+# X = np.array(df.values.tolist())
 
-print(clustering.labels_)
+# print(X)
+
+# clustering = SpectralClustering(n_clusters=3, assign_labels='discretize', random_state=0).fit(X)
+
+# print(clustering.labels_)
